@@ -9,8 +9,8 @@ import { useState } from "react";
 import { IntlProvider } from "react-intl";
 import Navbar from "../src/components/Navbar/Navbar";
 import { AnimatePresence } from "framer-motion";
-import Footer from '../src/components/Footer/Footer'
-import Head from 'next/head'
+import Footer from "../src/components/Footer/Footer";
+import Head from "next/head";
 
 const initialState = {
   email: "",
@@ -23,22 +23,31 @@ const store = createStore(
   })
 );
 
-function MyApp({ Component, pageProps,router }) {
+function MyApp({ Component, pageProps, router }) {
   const [currentLocale, setCurrentLocale] = useState("en");
   const messages = allMessages[currentLocale];
   return (
     <IntlProvider locale={currentLocale} messages={messages}>
       <Provider store={store}>
         <Head>
-           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <script src="https://kit.fontawesome.com/61a207640a.js" crossorigin="anonymous"></script>
+          <meta charset="utf-8" />
+          <meta name="theme-color" content="#000000" />
+          <meta
+            name="Sebastian Labadie- Fullstack"
+            content="Portfolio created by Sebastian Labadie, made in nextjs."
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <script
+            src="https://kit.fontawesome.com/61a207640a.js"
+            crossorigin="anonymous"
+          ></script>
         </Head>
         <Navbar
           currentLocale={currentLocale}
           onClick={() => setCurrentLocale(currentLocale === "en" ? "es" : "en")}
         />
         <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.route}/>
+          <Component {...pageProps} key={router.route} />
         </AnimatePresence>
         <Footer />
       </Provider>

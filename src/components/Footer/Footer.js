@@ -67,7 +67,7 @@ const Footer = () => {
       <Wrapper>
         <div className="container">
           <div className="containers ">
-            <h3>{intl.messages['footer.thankT']}</h3>
+            <h2>{intl.messages['footer.thankT']}</h2>
             <div className="info">
               <p>
               {intl.messages['footer.interest']}
@@ -75,14 +75,14 @@ const Footer = () => {
             </div>
           </div>
           <div className="containers">
-            <h3>{intl.messages['footer.contact']}</h3>
+            <h2>{intl.messages['footer.contact']}</h2>
             <div className="info">
               <p>sebastianlabadie.contact@gmail.com</p>
             </div>
           </div>
           <div className="containers">
             {/*poner iconos*/}
-            <h3>{intl.messages['footer.socials']}</h3>
+            <h2>{intl.messages['footer.socials']}</h2>
             <div className="info">
               <a href="https://github.com/SebastianLabadie" target="_blank" rel="noopener noreferrer">Github<i className="fas fa-long-arrow-alt-up"></i></a>
               <a href="https://www.linkedin.com/in/sebasti%C3%A1n-labadie-173902181/" target="_blank" rel="noopener noreferrer"> Linkdin<i className="fas fa-long-arrow-alt-up"></i></a>
@@ -91,7 +91,7 @@ const Footer = () => {
           </div>
           <div className="containers">
             {/*poner iconos*/}
-            <h3>{intl.messages['footer.resumen']}</h3>
+            <h2>{intl.messages['footer.resumen']}</h2>
             <div className="info">
               <a href="https://drive.google.com/file/d/1K3HTlXorhh-BLr0Fp2v1_pqCXCVrkfL9/view?usp=sharing" target="_blank" rel="noopener noreferrer">C.V<i className="fas fa-long-arrow-alt-up"></i></a>
             </div>
