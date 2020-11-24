@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { blurAnimation } from "../../../assets/animations";
 import Modal from "./Modal";
 const CertificatesCardStyled = styled(motion.div)`
   width: 300px;
   cursor: pointer;
   position: relative;
-  span{
+  span {
     display: initial !important;
   }
   img {
     max-width: 100%;
-    height: 231px;
+    height: auto;
     display: block;
   }
 
@@ -32,8 +33,6 @@ const CertificatesCardStyled = styled(motion.div)`
       color: #b0b0b0;
     }
   }
-
-  
 `;
 function CertificatesCard({ title, img }) {
   const [show, setShow] = useState(false);
@@ -41,13 +40,11 @@ function CertificatesCard({ title, img }) {
   const pageVariants = {
     inY: {
       opacity: 1,
-      scale:1,
-      blur:2  
+      scale: 1,
     },
     outY: {
       opacity: 0,
-      scale:0,
-      blur:20,
+      scale: 0,
     },
   };
 
@@ -60,9 +57,16 @@ function CertificatesCard({ title, img }) {
       onClick={() => setShow(!show)}
     >
       <div className="certificatesCard__overlay">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </div>
-      <img src={img} alt="sebastian labadie certificados" />
+      <motion.img
+        initial={blurAnimation.outBlur}
+        animate={blurAnimation.inBlur}
+        exit={blurAnimation.outBlur}
+        transition={{ duration: 0.5 }}
+        src={img}
+        alt="sebastian labadie certificados"
+      />
       <Modal
         show={show}
         setShow={() => setShow(!show)}

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import LayoutInfoAndSkills from "../src/components/About/LayoutInfoAndSkills";
 import Head from "next/head";
 import { useIntl } from "react-intl";
+import { blurAnimation } from "../assets/animations";
 
 const AboutStyled = styled.div`
   min-width: 100vw;
@@ -120,7 +121,14 @@ const About = () => {
             className="container"
           >
             <div className="containerImg">
-              <img src={profileImg} alt="sebastian labadie" />
+              <motion.img
+                initial={blurAnimation.outBlur}
+                animate={blurAnimation.inBlur}
+                exit={blurAnimation.outBlur}
+                transition={{ duration: 1 }}
+                src={profileImg}
+                alt="sebastian labadie"
+              />
             </div>
             <LayoutInfoAndSkills />
           </motion.div>

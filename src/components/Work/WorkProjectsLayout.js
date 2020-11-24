@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useIntl } from "react-intl"; 
-import {useRouter} from 'next/router'
+import { useIntl } from "react-intl";
+import { useRouter } from "next/router";
+import { blurAnimation } from "../../../assets/animations";
 
 const WorkProjectsLayoutStyled = styled(motion.div)`
   display: flex;
@@ -143,17 +144,15 @@ const WorkProjectsLayout = ({
   const pageVariants = {
     inX: {
       opacity: 1,
-        x: 0,
-        filter:"blur(0px)"
+      x: 0,
     },
     outX: {
       opacity: 0,
       x: "-80vw",
-      filter:"blur(10px)"
     },
   };
   const intl = useIntl();
-  const router = useRouter()
+  const router = useRouter();
   return (
     <WorkProjectsLayoutStyled
       initial={pageVariants.outX}
@@ -163,7 +162,14 @@ const WorkProjectsLayout = ({
       projectDeployFrontend={projectDeployFrontend}
       projectDeployBackend={projectDeployBackend}
     >
-      <img src={`/${projectName}.jpg`} alt="img"  />
+      <motion.img
+        initial={blurAnimation.outBlur}
+        animate={blurAnimation.inBlur}
+        exit={blurAnimation.outBlur}
+        transition={{ duration: 0.7 }}
+        src={`/${projectName}.jpg`}
+        alt="img"
+      />
       <div className="info">
         <h2 className="title">{projectName}</h2>
         <p>{projectDetail}</p>

@@ -35,6 +35,8 @@ function MyApp({ Component, pageProps, router }) {
             src="https://kit.fontawesome.com/61a207640a.js"
             crossorigin="anonymous"
           ></script> */}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         </Head>
         <Navbar
           currentLocale={currentLocale}

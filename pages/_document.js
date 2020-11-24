@@ -16,7 +16,6 @@ class MyDocument extends Document {
             name="Description"
             content="Portfolio created by Sebastian Labadie, made in nextjs."
           />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <body>
           <Main />
