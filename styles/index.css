@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+body{
+  background:rgba(19,20,20,1);
+  font-family: 'Inter', sans-serif;
+  font-size:16px;
+  color: #dadada;
+  font-weight: 700;
+  position: relative;
+}
+
+/* Hide scrollbar for chrome,safari and opera */
+body::-webkit-scrollbar{
+    display: none;
+}
+ /* Hide scrollbar for IE,Edge and firefox */
+body::-webkit-scrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#root{
+  overflow:hidden;
+}
+
+
+  .stop-scrolling { 
+      height: 100%; 
+      overflow: hidden; 
+  } 
+  
+  .Toastify__toast-container--top-right{
+    top:10vh !important;
+  }
+  .Toastify__toast--error {
+    background: #e05050;
+  }
+
+
+  :root{
+    --color-primary-light:202, 55, 130;
+    --color-primary-dark: 30, 11, 54;
+    --color-black: #000;
+    --color-gray-dark: #aaa;
+    --color-gray-light: #eee;
+    --color-white: #fff;
+    --background-color: #ece0e8;
+    --color-tomatoe:224,80,80;
+}
