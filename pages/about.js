@@ -111,6 +111,10 @@ const About = () => {
   return (
     <>
       <Head>
+      <meta
+            name="Sebastian Labadie- Fullstack"
+            content="Portfolio created by Sebastian Labadie, made in nextjs."
+          />
         <title> Sebastian Labadie - {intl.messages["nav.about"]} </title>
       </Head>
     <Wrapper>
