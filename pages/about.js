@@ -25,7 +25,7 @@ const AboutStyled = styled.div`
     width: 100%;
     display: flex;
     img {
-      height: 461px;
+      height: 100%;
       width: 450px;
       margin: auto;
       border-radius: 10px;
