@@ -31,10 +31,10 @@ function MyApp({ Component, pageProps, router }) {
       <Provider store={store}>
         <Head>
         
-          <script
+          {/* <script
             src="https://kit.fontawesome.com/61a207640a.js"
             crossorigin="anonymous"
-          ></script>
+          ></script> */}
         </Head>
         <Navbar
           currentLocale={currentLocale}

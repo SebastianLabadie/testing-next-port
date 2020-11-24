@@ -21,13 +21,6 @@ const Work = () => {
   return (
     <>
       <Head>
-      <meta property="og:type" content="website" />
-      <meta name="og:title" property="og:title" content="Sebastian Labadie- Fullstack" />
-      <meta name="og:description" property="og:description" content="Portfolio created by Sebastian Labadie, made in nextjs." />
-      <meta
-            name="Sebastian Labadie- Fullstack"
-            content="Portfolio created by Sebastian Labadie, made in nextjs."
-          />
         <title> Sebastian Labadie - {intl.messages["nav.work"]} </title>
       </Head>
       <Wrapper>
