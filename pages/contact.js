@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import FormCustom from "../src/components/Contact/Form";
 import {useIntl} from 'react-intl'
+import Head  from "next/head";
 
 const ContactStyled = styled.div`
   display: flex;
@@ -109,6 +110,9 @@ const Contact = () => {
   const intl=useIntl()
   return (
     <>
+    <Head>
+      <title> Sebastian Labadie - {intl.messages["nav.contact"]} </title>
+    </Head>
       <Wrapper>
         <ContactStyled>
           <div className="container">

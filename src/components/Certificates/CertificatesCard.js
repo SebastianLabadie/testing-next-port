@@ -11,7 +11,7 @@ const CertificatesCardStyled = styled(motion.div)`
   }
   img {
     max-width: 100%;
-    height: 231px;
+    height: auto;
     display: block;
   }
 

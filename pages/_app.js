@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps,router }) {
     <IntlProvider locale={currentLocale} messages={messages}>
       <Provider store={store}>
         <Head>
+           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <script src="https://kit.fontawesome.com/61a207640a.js" crossorigin="anonymous"></script>
         </Head>
         <Navbar

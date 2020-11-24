@@ -171,10 +171,10 @@ const Navbar = ({currentLocale,onClick}) => {
             <MenuItem title={intl.messages['nav.certificates']} url="/certifications" cName='nav-links' onClick={handleClickLink}/>
             <MenuItem title={intl.messages['nav.work']} url="/work" cName='nav-links' onClick={handleClickLink}/>
             <MenuItem title={intl.messages['nav.contact']} url="/contact" cName='nav-links' onClick={handleClickLink}/>
-            <div className="language-icon" onClick={onClick}>
+            <li className="language-icon" onClick={onClick}>
               <div className="language-img"></div>
               <p>{currentLocale.toUpperCase()}</p>
-            </div>
+            </li>
           </ul>
         </nav>
       </Wrapper>

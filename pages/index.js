@@ -1,11 +1,11 @@
-import React,{useEffect, useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import backgroundImg from "../assets/images/homeBack.png";
 import Wrapper from "../src/components/Wrapper";
 import { motion } from "framer-motion";
-import Separator from '../src/components/Home/Separator'  
-import {useIntl} from 'react-intl'
-
+import Separator from "../src/components/Home/Separator";
+import { useIntl } from "react-intl";
+import Head from "next/head";
 
 const HomeStyled = styled.div`
   position: relative;
@@ -47,7 +47,6 @@ const HomeStyled = styled.div`
     position: relative;
     top: 56%;
   }
-  
 
   @media screen and (max-width: 1080px) {
     background-size: 800px;
@@ -152,44 +151,43 @@ const pageVariants = {
 };
 
 const Home = () => {
-  const intl=useIntl()
-  
+  const intl = useIntl();
+
   return (
-    <Wrapper>
-      <HomeStyled >
-        <motion.div
-          initial={pageVariants.outX}
-          animate={pageVariants.inX}
-          exit={pageVariants.outX}
-          transition={{ duration: 1.5 }}
-          className="text"
-        >
-          <p className="name">{intl.messages['home.name']}</p>
-          <p className="full">{intl.messages['home.full']}</p>
-          <p className="work">
-          {intl.messages['home.work']}
-          </p>
-        </motion.div>
+    <>
+      <Head>
+        <title> Sebastian Labadie - {intl.messages["nav.home"]} </title>
+      </Head>
+      <Wrapper>
+        <HomeStyled>
+          <motion.div
+            initial={pageVariants.outX}
+            animate={pageVariants.inX}
+            exit={pageVariants.outX}
+            transition={{ duration: 1.5 }}
+            className="text"
+          >
+            <p className="name">{intl.messages["home.name"]}</p>
+            <p className="full">{intl.messages["home.full"]}</p>
+            <p className="work">{intl.messages["home.work"]}</p>
+          </motion.div>
 
-        <motion.p 
-        initial={pageVariants.outY} 
-        animate={pageVariants.inY} 
-        exit={pageVariants.outY}   transition={{ duration: 1 }}
-        className="see">
-          {intl.messages['home.see']}
-        </motion.p>
+          <motion.p
+            initial={pageVariants.outY}
+            animate={pageVariants.inY}
+            exit={pageVariants.outY}
+            transition={{ duration: 1 }}
+            className="see"
+          >
+            {intl.messages["home.see"]}
+          </motion.p>
 
-        <Separator name="one"/>
-        <Separator name="two"/>
-        
-      </HomeStyled>
-    </Wrapper>
+          <Separator name="one" />
+          <Separator name="two" />
+        </HomeStyled>
+      </Wrapper>
+    </>
   );
 };
-
-/* export const getStaticProps = async (ctx) => {
-  const asd=window.innerHeight
-} */
-
 
 export default Home;

@@ -4,6 +4,8 @@ import styled from "styled-components";
 import profileImg from "../assets/images/FotoCarne.jpg";
 import { motion } from "framer-motion";
 import LayoutInfoAndSkills from '../src/components/About/LayoutInfoAndSkills'
+import Head  from "next/head";
+import { useIntl } from "react-intl";
 
 const AboutStyled = styled.div`
   min-width:100vw;
@@ -105,7 +107,12 @@ const pageVariants = {
 
 
 const About = () => {
+  const intl = useIntl()
   return (
+    <>
+      <Head>
+        <title> Sebastian Labadie - {intl.messages["nav.about"]} </title>
+      </Head>
     <Wrapper>
       <AboutStyled>
         <motion.div 
@@ -122,6 +129,7 @@ const About = () => {
         </motion.div>
       </AboutStyled>
     </Wrapper>
+    </>
   );
 };
 

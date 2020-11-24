@@ -13,6 +13,7 @@ import diplomaBackCoursera from '../assets/images/Coursera backend-1.jpg'
 import diplomaGenexus from '../assets/images/diploma genexus.jpg' 
 import CertificatesCard from "../src/components/Certificates/CertificatesCard";
 import { motion } from "framer-motion";
+import Head  from "next/head";
 
 const CertificatesStyled = styled.div`
   .certificates__container {
@@ -51,6 +52,10 @@ function Certificates() {
   };
 
   return (
+    <>
+      <Head>
+        <title> Sebastian Labadie - {intl.messages["nav.certificates"]} </title>
+      </Head>
     <Wrapper>
       <CertificatesStyled>
         <motion.h2
@@ -77,6 +82,7 @@ function Certificates() {
         </div>
       </CertificatesStyled>
     </Wrapper>
+    </>
   );
 }
 
