@@ -115,7 +115,7 @@ const About = () => {
       <meta name="og:title" property="og:title" content="Sebastian Labadie- Fullstack" />
       <meta name="og:description" property="og:description" content="Portfolio created by Sebastian Labadie, made in nextjs." />
       <meta
-            name="Sebastian Labadie- Fullstack"
+            name="Description"
             content="Portfolio created by Sebastian Labadie, made in nextjs."
           />
         <title> Sebastian Labadie - {intl.messages["nav.about"]} </title>
