@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useIntl } from "react-intl";
-import { useRouter } from "next/router";
 import { blurAnimation } from "../../../assets/animations";
 
 const WorkProjectsLayoutStyled = styled(motion.div)`
@@ -152,7 +151,6 @@ const WorkProjectsLayout = ({
     },
   };
   const intl = useIntl();
-  const router = useRouter();
   return (
     <WorkProjectsLayoutStyled
       initial={pageVariants.outX}

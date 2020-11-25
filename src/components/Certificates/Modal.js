@@ -28,9 +28,6 @@ const show = keyframes`
 `
 
 const ModalStyled=styled.div`
-    display:${(props)=>props.show ? 'block' : "none"};
-
-    .modal__backdrop{
         display:${(props)=>props.show ? 'block' : "none"};
         position: absolute;
         top:0;
@@ -38,8 +35,8 @@ const ModalStyled=styled.div`
         right:0;
         left:0;
         background-color: rgba(0, 0, 0, .7);
-        z-index: 1;
-    }
+        z-index: 10;
+    
     .modal__content{
         width:700px;
         position: fixed;
@@ -81,8 +78,7 @@ const ModalStyled=styled.div`
 function Modal({show,setShow,img}) {
 
  return (
-        <ModalStyled show={show}>
-            <div className="modal__backdrop" onClick={setShow} ></div>
+        <ModalStyled show={show} onClick={setShow}>
           <div className={show ? `modal__content modal__show` : `modal__content modal__hide` }>
             {/* <Button/> */}
             <img src={img} alt=""  />

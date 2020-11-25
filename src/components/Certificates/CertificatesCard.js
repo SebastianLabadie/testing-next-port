@@ -7,14 +7,22 @@ const CertificatesCardStyled = styled(motion.div)`
   width: 300px;
   cursor: pointer;
   position: relative;
-  span {
-    display: initial !important;
-  }
   img {
     max-width: 100%;
     height: auto;
     display: block;
+    z-index:1;
   }
+  &:hover {
+    .certificatesCard__overlay {
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      color: #b0b0b0;
+      z-index:2;
+    }
+  }
+
 
   .certificatesCard__overlay {
     position: absolute;
@@ -25,14 +33,7 @@ const CertificatesCardStyled = styled(motion.div)`
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
   }
-  &:hover {
-    .certificatesCard__overlay {
-      display: grid;
-      place-items: center;
-      font-size: 28px;
-      color: #b0b0b0;
-    }
-  }
+ 
 `;
 function CertificatesCard({ title, img }) {
   const [show, setShow] = useState(false);
@@ -49,6 +50,7 @@ function CertificatesCard({ title, img }) {
   };
 
   return (
+    <>
     <CertificatesCardStyled
       initial={pageVariants.outY}
       animate={pageVariants.inY}
@@ -67,13 +69,15 @@ function CertificatesCard({ title, img }) {
         src={img}
         alt="sebastian labadie certificados"
       />
-      <Modal
-        show={show}
-        setShow={() => setShow(!show)}
-        title={title}
-        img={img}
-      />
+     
     </CertificatesCardStyled>
+     <Modal
+     show={show}
+     setShow={() => setShow(!show)}
+     title={title}
+     img={img}
+   />
+   </>
   );
 }
 
